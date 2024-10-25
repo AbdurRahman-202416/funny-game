@@ -19,7 +19,7 @@
         color: #ffffff;
         font-family: Arial, sans-serif;
         overflow: hidden;
-        animation: backgroundAnimation 15s infinite alternate ease-in-out;
+        /* animation: backgroundAnimation 15s infinite alternate ease-in-out; */
       }
 
       /* Container and Box */
@@ -59,7 +59,7 @@
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 8px;
-        transition: all 0.5s;
+        transition: all 0.3s;
       }
 
       #yes:hover {
@@ -122,29 +122,34 @@
       // Function to move the "No" button
       function moveButton() {
         const viewportWidth = window.innerWidth;
+        
         const viewportHeight = window.innerHeight;
 
-        const randomX = Math.random() * (viewportWidth - 100);
-        const randomY = Math.random() * (viewportHeight - 100);
+        const randomX = Math.random() * (viewportWidth - 120);
+        const randomY = Math.random() * (viewportHeight - 120);
 
         no.style.left = randomX + "px";
         no.style.top = randomY + "px";
       }
+   console.log(window.innerWidth);
+     
 
       // Event listeners for desktop and mobile
       no.addEventListener("mouseenter", moveButton); // Desktop
       no.addEventListener("touchstart", moveButton); // Mobile
+     
+
 
       // Handling button clicks
-      no.addEventListener("click", function () {
-        let mssg = prompt("Why don't you like me?");
-        let output = document.getElementById("Print");
-        output.innerText = "Because you said: " + mssg;
-        output.style.color = "tomato";
-        setTimeout(() => {
-          output.innerText = "";
-        }, 5000);
-      });
+      // no.addEventListener("click", function () {
+      //   let mssg = prompt("Why you don't like me?");
+      //   let output = document.getElementById("Print");
+      //   output.innerText = "You Don't like Me Because you said:  " + mssg;
+      //   output.style.color = "tomato";
+      //   setTimeout(() => {
+      //     output.innerText = "";
+      //   }, 5000);
+      // });
 
       yes.addEventListener("click", function () {
         let output = document.getElementById("Print");
